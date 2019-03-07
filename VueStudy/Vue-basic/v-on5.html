@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- 通过cdn引入vue.js -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<style type="text/css">
+			
+
+			.btn {
+				color: red;
+			}
+
+			.link {
+				cursor: pointer;
+			}
+			.zan{
+				display:flex;
+				
+			}
+			.btn{
+				width:100px;
+				height:35px;
+				border-radius: 20px;
+				background-color:#FFF;
+				
+				border:1px solid rgb(236, 97, 73);
+				outline:none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- vue-app根容器 -->
+		<div id="app">
+			<div class="zan">
+				
+				
+				<button class="btn link" v-show="followed" 
+				v-on:click="handfollow" v-on:click="handfollow"><i class="icon-heart"></i>喜欢 |{{age}} </button>
+				
+				<button class="btn link" v-show="followed===false" v-on:click="handfollow">
+					<i class="icon-heart-empty"></i>喜欢 {{age}} </button>
+			<!-- 	<p class="" v-on:click="add">{{age}}</p> -->
+			</div>
+
+		</div>
+		<script type="text/javascript">
+			//实例化一个vue对象
+			var app = new Vue({
+				el: '#app',
+				data: {
+					age: 6,
+					followed: false
+
+				},
+				methods: {
+					handfollow: function(followed) {
+						this.followed = !this.followed;
+						if(this.followed==true){
+							this.age+=1;
+						}
+						else{
+							this.age-=1;
+						}
+					}
+					
+				}
+
+			})
+		</script>
+
+	</body>
+</html>

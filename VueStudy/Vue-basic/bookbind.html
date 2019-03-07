@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!-- 通过cdn引入vue.js -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<!-- vue-app根容器 -->
+		<div id="app">
+			<img :src="s" >
+			<a v-bind:href="url">{{title}}</a>
+			<p>{{author}}</p>
+		
+
+		</div>
+		<script type="text/javascript">
+			//实例化一个vue对象
+			var app = new Vue({
+				el: '#app',
+				data:{
+					s:'https://img3.doubanio.com/view/subject/l/public/s30005152.jpg',
+					title:'猫·妖',
+					author:'(日)石黑亚矢子',
+					url:'https://book.douban.com/subject/30389561/?icn=index-latestbook-subject'
+					
+					
+					
+				}
+			})
+		</script>
+		
+	</body>
+</html>
